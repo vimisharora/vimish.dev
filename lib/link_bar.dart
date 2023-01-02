@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simple_icons/simple_icons.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Linkbar extends StatelessWidget {
@@ -11,17 +11,20 @@ class Linkbar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         IconButton  (
-          icon: const Icon(SimpleIcons.github,),
+          icon: SvgPicture.asset("image/github.svg",color: Colors.white,),
           onPressed:()=> _launchURL("https://github.com/vimisharora"),),
         IconButton  (
-          icon: const Icon(SimpleIcons.gmail,),
+          icon: const Icon(Icons.mail_outline),
           onPressed: ()=> _sendmail(Uri(scheme: 'mailto',
     path: 'vimisharora@gmail.com',
     queryParameters: {
     'subject': 'Default Subject',
     'body': 'Default body'})),),
         IconButton  (
-          icon: const Icon(SimpleIcons.linkedin,),
+          icon: SvgPicture.asset("image/leetcode.svg",color: Colors.white,),
+          onPressed: ()=> _launchURL("https://leetcode.com/vimisharora/"),),
+        IconButton  (
+          icon: SvgPicture.asset("image/linkedin.svg",color: Colors.white,),
           onPressed: ()=> _launchURL("https://www.linkedin.com/in/vimish-arora-838135207/"),),
 
         // const Text("two"),
